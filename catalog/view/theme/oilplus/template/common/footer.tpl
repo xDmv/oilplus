@@ -208,11 +208,28 @@
       </script>
     <hr>
 	<p><center>&copy;&nbsp;	<?php if (date('Y')>2016)
-		{echo "2016-";echo date('Y');}
-		else {echo "2016";} ?>
-	Интернет-магазин &reg;OilPlus. Все права защищены.</br>Любое копирование материалов только с разрешения владельца сайта.
+		{
+      echo "2016-";
+      echo date('Y');
+    }
+		else {
+      echo "2016";
+    } ?>
+	   Интернет-магазин &reg;OilPlus. Все права защищены.</br>Любое копирование материалов только с разрешения владельца сайта.
 	</center></p>
   </div>
+
+  <script type="text/javascript">
+    $(document).snowfall({
+      flakeCount: 200,
+      flakeColor: "#DCDCDC",
+      image :"catalog/view/theme/oilplus/stylesheet/flake.png",
+      minSize: 5,
+      maxSize: 15,
+      round: true,
+      shadow: false,
+    });
+  </script>
 </footer>
 
 </body>

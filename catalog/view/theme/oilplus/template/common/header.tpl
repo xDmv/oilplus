@@ -34,6 +34,10 @@
 <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
 <link href="catalog/view/theme/oilplus/stylesheet/stylesheet.css" rel="stylesheet">
 
+// snow winter
+<!--
+<script src="http://daruse.ru/assets/js/snowfall.js"></script>
+-->
 
 <?php foreach ($styles as $style) { ?>
 <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
@@ -65,7 +69,7 @@ $input.change();
 return false;
 });
 });
-</script> 
+</script>
 
 <!--Start of Zendesk Chat Script-->
 <script type="text/javascript">
@@ -113,42 +117,42 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 <div class="navbar navbar-inverse navbar-fixed-top pad">
 	<div class="container-fluid">
 	<div class="navbar-header">
-		<div class="row" style="margin-left: 10px;">		
+		<div class="row" style="margin-left: 10px;">
 				<div class="col-xs-4 hidden-md hidden-lg nav navbar-header">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
 						<button type="button" class="btn btn-primary" >
 							<span class="fa fa-phone" aria-hidden="true"></span><i>&nbsp;Позвоните</i><span class="caret"></span>
-						</button>					
+						</button>
 					</a>
 					<ul class="dropdown-menu">
 						<li><i class="fa fa-phone"></i><?php echo $telephone; ?></li>
 						<?php if ($telephone2=="")
 						{echo "";}
 						else {echo "<li><i class='fa fa-phone' aria-hidden='true'></i>"; echo $telephone2; echo "</li>";}
-						?>					
+						?>
 						<?php if ($telephone3=="")
 						{echo "";}
 						else {echo "<li><i class='fa fa-phone' aria-hidden='true'></i>"; echo $telephone3;echo "</li>";}
 						?>
-					</ul>				
-				</div>								
+					</ul>
+				</div>
 				<div class="col-xs-4 hidden-md hidden-lg nav navbar-header">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
 						<button type="button" class="btn btn-primary" >
 							<span class="glyphicon glyphicon-time" aria-hidden="true"></span><i>&nbsp;Работаем</i><span class="caret"></span>
-						</button>&nbsp;					
+						</button>&nbsp;
 					</a>
 					<ul class="dropdown-menu">
 						<li> <?php if ($open=="") {echo "";}
 						else {echo "<i class='fa fa-clock-o' aria-hidden='true'></i>&nbsp;"; echo $open;} ?>
-						</li>						
+						</li>
 					</ul>
-				</div>							
+				</div>
 				<div class="col-xs-4 hidden-md hidden-lg nav navbar-header">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
 						<button type="button" class="btn btn-primary" >
 							<span class="fa fa-user-o" aria-hidden="true"></span><i>&nbsp;Вход</i><span class="caret"></span>
-						</button>&nbsp;					
+						</button>&nbsp;
 					</a>
 					<ul class="dropdown-menu dropdown-menu-right">
 						<li><a href="<?php echo $register; ?>"><?php echo $text_register; ?></a></li>
@@ -156,9 +160,9 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 						<li><a href="<?php echo $text_wishlist; ?>">&nbsp;<?php echo $text_wishlist; ?></a></li>
 					</ul>
 				</div>
-				<div class="hidden-md hidden-lg" style="position: fixed; top: 55px; right: 10px; z-index: 99;"><?php echo $cart; ?></div>				
+				<div class="hidden-md hidden-lg" style="position: fixed; top: 55px; right: 10px; z-index: 99;"><?php echo $cart; ?></div>
 		</div>
-		
+
 		<div class="row hidden-sm hidden-xs">
 			<div class="container">
 				<div class="col-md-2" >
@@ -167,31 +171,31 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 							&nbsp;<i class="fa fa-phone" aria-hidden="true"></i><?php echo $telephone;?>
 							<?php if ($telephone2)
 							{echo "<i class='fa fa-phone' aria-hidden='true'></i>"; echo $telephone2;}
-							?>					
+							?>
 
-					</p>		
+					</p>
 				</div>
 				<div class="col-md-4" style="margin-left: 5px;">
-					<p class="vyrovnyat">							
+					<p class="vyrovnyat">
 							<?php if ($open)
 							{echo "<i class='fa fa-clock-o' aria-hidden='true'></i>&nbsp;"; echo $open;}
 							else {echo "";}
 							?>
-					</p>					
+					</p>
 				</div>
 				<div class="col-md-6" style="margin-left: -10px;">
-					
+
 						<?php if (!$logged)
 							{?>
-								<a class="colorh btn btn-primary" href="<?php echo $login; ?>"><i class="fa fa-sign-in" style="color: #ffffff;"></i><span style="color: #ffffff;">&nbsp;<?php echo $text_login; ?></span></a>	
-								<a class="colorh btn btn-primary" href="<?php echo $register; ?>"><i class="fa fa-user-plus" style="color: #ffffff;"></i><span style="color: #ffffff;">&nbsp;<?php echo $text_register; ?></span></a>	
+								<a class="colorh btn btn-primary" href="<?php echo $login; ?>"><i class="fa fa-sign-in" style="color: #ffffff;"></i><span style="color: #ffffff;">&nbsp;<?php echo $text_login; ?></span></a>
+								<a class="colorh btn btn-primary" href="<?php echo $register; ?>"><i class="fa fa-user-plus" style="color: #ffffff;"></i><span style="color: #ffffff;">&nbsp;<?php echo $text_register; ?></span></a>
 						<?php } else { ?>
 							<span style="color: #ffffff;"><i class="fa fa-user"></i> <?php echo $text_logged; ?></span>
 						<?php } ?>
 						<a class="colorh btn btn-primary" href="<?php echo $wishlist; ?>" id="wishlis-total" title="<?php echo $text_wishlist; ?>"><i class="fa fa-heart" style="color: #ffffff;"></i><span style="color: #ffffff;">&nbsp;<?php echo $text_wishlist; ?></span></a>
 						<a class="colorh btn btn-primary" href="<?php echo $compare; ?>" id="compare-total" title="<?php echo $text_compare; ?>"><i class="fa fa-balance-scale" style="color: #ffffff;"></i><span style="color: #ffffff;">&nbsp;<?php echo $text_compare; ?></span></a>
 						<div style="position: fixed; top: 5px; right: 10px; z-index: 99;"><?php echo $cart; ?></div>
-					
+
 				</div>
 			</div>
 		</div>
@@ -203,7 +207,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 <header>
 
 <div class="container">
-	<div class="row" style="margin-top: 10px;"> 
+	<div class="row" style="margin-top: 10px;">
 		<div class="col-md-2 col-lg-2 hidden-md hidden-lg vyrovnyat" style="margin-top: 25px;">
 			<div id="logo">
 				  <?php if ($logo) { ?>
@@ -229,35 +233,35 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 				<h1><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
 			  <?php } ?>
 			</div>
-		</div>		
+		</div>
 		<div class="col-md-4"><?php echo $search; ?></div>
-		<div class="col-md-6">			
-					
+		<div class="col-md-6">
+
 				<div class="nav navbar-header navbar-default">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#reversive-menu">
 						<span class="sr-only">Открыть навигацию</span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>						
+						<span class="icon-bar"></span>
 					</button>
 					<span class="navbar-brand hidden-lg hidden-md">Top - меню</span>
-				</div>					
-				<div class="collapse navbar-collapse" id="reversive-menu">					
+				</div>
+				<div class="collapse navbar-collapse" id="reversive-menu">
 					<div class="nav navbar-header navbar-default topmenu">
-					
-						<ul class="nav navbar-nav">					
+
+						<ul class="nav navbar-nav">
 							<li class="bor"><a href="http://oilplus.com.ua/o-magazin.html"><i class="colr2">О магазине</i></a></li>
 							<li class="bor"><a href="http://oilplus.com.ua/dostavka-i-oplata.html"><i class="colr2">Доставка и оплата</i></a></li>
 							<li class="bor"><a href="http://oilplus.com.ua/kontakty.html"><i class="colr2">Контакты</i></a></li>
 							<li class="bor"><a href="http://oilplus.com.ua/aktsii.html"><i class="colr">Акции!</i></a></li>
 						</ul>
-											
-					</div>			
-				</div>		
-			
+
+					</div>
+				</div>
+
 		</div>
 	</div>
-</div>	
+</div>
 </header>
 <?php if ($categories) { ?>
 <div class="container">
