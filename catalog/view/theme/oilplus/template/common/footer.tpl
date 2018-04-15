@@ -158,6 +158,11 @@
                 </div>
 
                 <p style="color: #FF0000;">* - поля которые обязательны для заполнения</p>
+				<div class="form-group required">
+					<div class="col-sm-offset-2 col-sm-10">
+						<div class="g-recaptcha" data-sitekey="6LcA71IUAAAAAJsRdIrNkojrEyrqkhIAddu4gmr3"></div>
+					</div>
+				</div>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
                 <input type="submit" class="btn btn-primary" id="send" value="Отправить" />
             </div>
@@ -167,9 +172,10 @@
               </div>
           </div>
 
+<script src="https://www.google.com/recaptcha/api.js" type="text/javascript"></script>
       <script type="text/javascript">
           $(document).ready(function() {
-              var regVr22 = "<div><img style='margin-bottom:-4px;' src='http://oilplus.com.ua/catalog/view/theme/oilplus/image/load.gif' alt='Отправка...' width='16' height='16'><span style='font: 11px Verdana; color:#333; margin-left:6px;'>Сообщение обрабатывается...</span></div><br />";
+              var regVr22 = "<div><i class='fa fa-spinner fa-pulse fa-2x fa-fw'></i><span style='font: 11px Verdana; color:#333; margin-left:6px;'>Сообщение обрабатывается...</span></div><br />";
               $("#send").click(function(){
                 $("#loadBar").html(regVr22).show();
 					var posName = $("#fio").val();
@@ -180,25 +186,28 @@
 							url: "../send.php",
 							data: form_data,
 							cache: false,
+							beforeSend: function() {
+							  console.log('отослано');
+							},
 							success: function(response){
-						var messageResp = "<p style='font-family:Verdana; font-size:11px; color:green; border:1px solid #00CC00; padding:10px; margin:20px; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; background-color:#fff;'>Спасибо, <strong>";
-						var resultStat = "</strong> за обращение!</br>Мы свяжемся с Вами в ближайшее время!";
-						var oll = (messageResp + posName + resultStat);
-								if(response == 1){
-								$("#loadBar").html(oll).fadeIn(3000);
-									$("#fio").val("");
-									$("#tel").val("");
-									$("#vinnum").val("");
-									$("#proizvoditel").val("");
-									$("#model").val("");
-									$("#dataproiz").val("");
-									$("#dvigatel").val("");
-									$("#kolichestvo").val("");
-									$("#namedetal").val("");
-									$("#coment").val("");
-								} else {
-						            $("#loadBar").html(response).fadeIn(3000);
-                      }
+								var messageResp = "<p style='font-family:Verdana; font-size:11px; color:green; border:1px solid #00CC00; padding:10px; margin:20px; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; background-color:#fff;'>Спасибо, <strong>";
+								var resultStat = "</strong> за обращение!</br>Мы свяжемся с Вами в ближайшее время!";
+								var oll = (messageResp + posName + resultStat);
+										if(response == 1){
+										$("#loadBar").html(oll).fadeIn(3000);
+											$("#fio").val("");
+											$("#tel").val("");
+											$("#vinnum").val("");
+											$("#proizvoditel").val("");
+											$("#model").val("");
+											$("#dataproiz").val("");
+											$("#dvigatel").val("");
+											$("#kolichestvo").val("");
+											$("#namedetal").val("");
+											$("#coment").val("");
+										} else {
+								            $("#loadBar").html(response).fadeIn(3000);
+		                      }
 							}
 						});
 						return false;
