@@ -220,6 +220,7 @@
   </div>
 
   <script type="text/javascript">
+  /*
     $(document).snowfall({
       flakeCount: 200,
       flakeColor: "#DCDCDC",
@@ -229,6 +230,7 @@
       round: true,
       shadow: false,
     });
+	*/
   </script>
 </footer>
 
